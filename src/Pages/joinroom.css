@@ -1,0 +1,6 @@
+.join-name ,.join-roomid{
+    @media (max-width: 650px) {
+        width: 100px;
+      }
+
+}

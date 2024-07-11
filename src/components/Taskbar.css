@@ -1,0 +1,65 @@
+.taskbar{
+    width: 50%;
+    height: 10%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* border:  2px solid brown; */
+        
+    border-radius:10px ;
+}
+
+.leave-btn{
+    border: 2px solid black;
+    color: black;
+    background-color: red;
+    border-radius: 10px;
+    width: 80px;
+    
+}
+
+
+
+.mic-btn{
+    border: 2px solid black;
+    color: black;
+    background-color: rgb(85, 255, 0);
+    
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+   
+
+}
+.video-btn{
+    border: 2px solid black;
+    color: black;
+    background-color: rgb(85, 255, 0);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    
+
+}
+.screenshare-btn{
+    border: 2px solid black;
+    color: black;
+
+    background-color: rgb(85, 255, 0);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+ 
+
+}
+.chat-btn{
+    border: 2px solid black;
+    color: black;
+    background-color: rgb(85, 255, 0);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+   
+
+}

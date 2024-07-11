@@ -1,0 +1,11 @@
+.navbar-orignal{
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+}
+
+.navbar-change{
+    background-color: black;
+    position: sticky;
+    top: 0;
+}
