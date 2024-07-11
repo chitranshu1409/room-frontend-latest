@@ -4,6 +4,8 @@ import Navbarr from '../components/Navbarr';
 import { useNavigate } from 'react-router-dom';
 import { ChatBubbleBottomCenterTextIcon,VideoCameraIcon, MicrophoneIcon, } from '@heroicons/react/24/outline'
 import Footer from '../components/Footer';
+import vc from '../pic/vc.png'
+import './HomePage.css'
 const features = [
   {
     name: 'Real Time Chat',
@@ -85,8 +87,8 @@ const HomePage = () => {
             </div>
           </div>    
         </div>
-        <div className='h-full w-2/5 '  >
-          <Spline scene="https://prod.spline.design/oMk62UEuPBfYTgZY/scene.splinecode" />
+        <div className=' home-img max-w-xs'  >
+          <img src={vc}></img>
         </div>
 
         

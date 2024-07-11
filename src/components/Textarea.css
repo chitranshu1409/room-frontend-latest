@@ -6,6 +6,11 @@
     
     border: 2px solid black;
     background-color: #DFDBE5;
+    @media (max-width: 650px) {
+        width: 80%;
+        height: 100%;
+        
+      }
     
 }
 .chat-disable{

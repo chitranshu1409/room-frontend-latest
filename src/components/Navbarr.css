@@ -3,6 +3,13 @@
     position: sticky;
     top: 0;
 }
+.navbar{
+    @media (max-width: 1030px) {
+        
+        align-items: center;
+        justify-content: space-between;
+      }
+}
 
 .navbar-change{
     background-color: black;

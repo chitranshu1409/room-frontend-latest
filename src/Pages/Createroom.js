@@ -25,7 +25,7 @@ export default function Createroom() {
             <p className="mt-4 text-lg leading-8 text-gray-300">
               Create a meet with just some clicks.
             </p>
-            <div className="mt-6 flex max-w-md gap-x-4">
+            <div className="mt-6 flex-wrap max-w-md gap-x-4">
 
               <label htmlFor="username" className="sr-only">
                 username
@@ -36,10 +36,10 @@ export default function Createroom() {
                 type="text"
                 onChange={(e)=>setUsername(e.target.value)}
                 required
-                className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                className="min-w-0 my-4 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
                 placeholder="Enter Username"
               />
-
+              <br/>
 
               <label htmlFor="email" className="sr-only">
                 Email
