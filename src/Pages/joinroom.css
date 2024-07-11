@@ -1,6 +1,13 @@
 .join-name ,.join-roomid{
-    @media (max-width: 650px) {
+    @media (max-width: 640px) {
         width: 100px;
       }
 
+}
+
+.join-email{
+  @media (max-width: 640px) {
+        width: 180px;
+        margin-top: 10px;
+      }
 }

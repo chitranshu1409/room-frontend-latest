@@ -4,7 +4,8 @@
     top: 0;
 }
 .navbar{
-    @media (max-width: 1030px) {
+    justify-content: space-around;
+    @media (max-width: 770px) {
         
         align-items: center;
         justify-content: space-between;
