@@ -32,7 +32,7 @@ export const Socket = ({ children }) => {
 
 
   const peerInstance = useRef(null);
-  const socket = useRef("https://room-backend-latest.onrender.com/");
+  const socket = useRef(io("https://room-backend-latest.onrender.com/"));
 
   useEffect(() => {
     console.log("1");
