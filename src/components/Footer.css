@@ -13,6 +13,9 @@
   
   .footer-links {
     margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .footer-links a {
@@ -27,6 +30,13 @@
   
   .contact-info {
     margin: 20px 0;
+    display: flex;
+    justify-content: space-around ;
+    @media (max-width: 640px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
   
   .contact-info p {
@@ -43,7 +53,8 @@
     margin-right: 10px;
   }
   .contact-icon{
-
+    width: 20px;
+    height: 20px;
   }
   .social-icons {
     margin-top: 10px;
