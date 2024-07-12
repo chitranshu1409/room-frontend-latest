@@ -5,7 +5,7 @@ import { TaskbarContext } from '../TaskbarContext'
 import { SocketContext } from '../SocketContext'
 const Video = () => {
   const {isChatActive,ScreenShot} =useContext(TaskbarContext)
-  const {clients,socketId,userMap,isMicActive,localStream,remoteStream,isScreenShareActiveRemote,remoteScreenShareStream,screenShareStream,isScreenShareActive} = useContext(SocketContext)
+  const {clients,isRemoteMicActive,socketId,userMap,isMicActive,localStream,remoteStream,isScreenShareActiveRemote,remoteScreenShareStream,screenShareStream,isScreenShareActive} = useContext(SocketContext)
   
   return (
     < div className={isChatActive ? 'video-div  ' : 'video-div-chat-disable  '} >
@@ -18,7 +18,7 @@ const Video = () => {
           {isScreenShareActiveRemote && <div className='screenShare-div'><ReactPlayer width="100%" height="90%" className="screen-video" url={remoteScreenShareStream} playing muted={!isMicActive} /></div>}
         
         <div className={isScreenShareActive|| isScreenShareActiveRemote ? 'video-when-screenshare-on':'video-when-screenshare-off'}>
-          {clients.map((e,i)=>userMap[socketId].peerId==e.peerId?<ReactPlayer key={i } width={isScreenShareActive||isScreenShareActiveRemote?"100%":"85%"} height={isScreenShareActive||isScreenShareActiveRemote?"40%":"90%"} className="my-video" url={localStream} playing muted />:<ReactPlayer width={isScreenShareActive||isScreenShareActiveRemote?"100%":"85%"} height={isScreenShareActive||isScreenShareActiveRemote?"40%":"90%"} className="other-video" key={i} url={remoteStream} muted={!isMicActive} playing />)}
+          {clients.map((e,i)=>userMap[socketId].peerId==e.peerId?<ReactPlayer key={i } width={isScreenShareActive||isScreenShareActiveRemote?"100%":"85%"} height={isScreenShareActive||isScreenShareActiveRemote?"40%":"90%"} className="my-video" url={localStream} playing muted />:<ReactPlayer width={isScreenShareActive||isScreenShareActiveRemote?"100%":"85%"} height={isScreenShareActive||isScreenShareActiveRemote?"40%":"90%"} className="other-video" key={i} url={remoteStream} muted={!isRemoteMicActive} playing />)}
         </div>
       </div>
     
