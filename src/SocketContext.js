@@ -16,7 +16,7 @@ export const Socket = ({ children }) => {
   const [peers, setPeers] = useState({});
   const [clients, setClients] = useState([]);
   const [isVideoActive, setIsVideoActive] = useState(true);
-  const [isMicActive, setIsMicActive] = useState(false);
+  const [isMicActive, setIsMicActive] = useState(true);
   const [localStream, setLocalStream] = useState();
   const [remoteStream, setRemoteStream] = useState();
   const [screenShareStream, setScreenShareStream] = useState()
@@ -27,6 +27,8 @@ export const Socket = ({ children }) => {
   const [videoTrack, setVideoTrack] = useState([])
   const [audioTrack, setAudioTrack] = useState([])
   const [streamTrack, setStreamTrack] = useState([])
+  const [remoteAudioTrack, setRemoteAudioTrack] = useState([])
+  const [isRemoteMicActive, setIsRemoteMicActive] = useState(true)
   const [remoteVideoTracks, setRemoteVideoTracks] = useState([])
   const [isRemoteVideoActive, setIsRemoteVideoActive] = useState(true)
 
@@ -124,7 +126,7 @@ export const Socket = ({ children }) => {
           call.answer(stream);
 
           call.on('stream', (stream) => {
-      
+              setRemoteAudioTrack(stream.getAudioTracks());
               setRemoteVideoTracks(stream.getVideoTracks());
               
               setRemoteStream(stream); 
@@ -183,7 +185,15 @@ export const Socket = ({ children }) => {
     
   },[streamTrack])
 
+  useEffect(()=>{
+    socket.current.emit("toggle-mic",{isMicActive: isMicActive,roomId:roomId});
+  },[isMicActive])
 
+  useEffect(()=>{
+    socket.current.on("toggle-remote-mic",({isRemoteMicActive})=>{
+      setIsRemoteMicActive(isRemoteMicActive);
+    })
+  },[socket])
   const sendMessage = () => {
     socket.current.emit("newMessage", { socketId: socket.current.id, roomId, username, message });
   };
@@ -213,6 +223,10 @@ export const Socket = ({ children }) => {
   };
 
   const toggleMicClass = () => {
+    // socket.current.emit("audio-off",{isMicActive:!isMicActive,roomId,firstTime:false});
+    // audioTrack.forEach(track => track.enabled = !isMicActive);
+
+    // setAudioTrack(audioTrack);
     setIsMicActive(!isMicActive);
   };
 
@@ -266,6 +280,7 @@ export const Socket = ({ children }) => {
       remoteScreenShareStream,
       screenShareStream,
       isScreenShareActiveRemote,
+      isRemoteMicActive
       
     }}>
       {children}
